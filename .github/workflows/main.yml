@@ -18,4 +18,4 @@ jobs:
         echo "Hello, GitHub Actions!"
         ls -la
         pwd
-        cd /home/hassan && mkdir hello1
+        cd /home/hassan && mkdir hello123
