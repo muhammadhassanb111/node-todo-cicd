@@ -1,4 +1,4 @@
-name: Basic Workflow
+name: new-workflow
 
 on:
   push:
@@ -54,15 +54,12 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Run a Simple Script for Job 3
-      run: |
-        echo "This is Job 3"
-        ls -la
-        pwd
-        echo "Job 3 Content" > job3.txt
-
-    - name: Upload Artifact for Job 3
+    - name: Download Artifact from Job 1
       uses: actions/download-artifact@v2
       with:
-        name: job3-artifact
-        path: job3.txt
+        name: job1-artifact
+        path: job1-artifact
+
+    - name: Display Artifact Content
+      run: |
+        cat job1-artifact/job1.txt
