@@ -26,7 +26,7 @@ jobs:
         path: job1.txt
 
   job2:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: job1
 
     steps:
@@ -47,7 +47,7 @@ jobs:
         path: job2.txt
 
   job3:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: job1
 
     steps:
@@ -62,7 +62,7 @@ jobs:
         echo "Job 3 Content" > job3.txt
 
     - name: Upload Artifact for Job 3
-      uses: actions/upload-artifact@v2
+      uses: actions/download-artifact@v2
       with:
         name: job3-artifact
         path: job3.txt
