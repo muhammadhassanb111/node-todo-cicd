@@ -15,5 +15,4 @@ jobs:
 
     - name: Run a Simple Script
       run: |
-        echo "Hello, GitHub Actions!"
-      run: ls -la
+        echo "Hello, GitHub Actions!" | ls -la
